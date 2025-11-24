@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+#include <iomanip>
+//работа со строками
+
+int main() {
+    std::string sentence;
+
+    std::cout << "Введите предложение: ";
+    std::getline(std::cin, sentence);
+
+    int totalLetters = 0;
+    int countA = 0;
+
+    for (char c : sentence) {
+        if (std::isalpha(c)) { // считаем только буквы std::isalpha() - проверка, является ли символ буквой
+            totalLetters++;
+            if (std::tolower(c) == 'a') {
+                countA++;
+            }
+        }
+    }
+
+    if (totalLetters == 0) {
+        std::cout << "В предложении нет букв!" << std::endl;
+        return 0;
+    }
+
+    double percentage = (static_cast<double>(countA) / totalLetters) * 100;
+
+    std::cout << std::fixed << std::setprecision(2);
+    std::cout << "Доля букв 'a': " << percentage << "%" << std::endl;
+
+    return 0;
+}
