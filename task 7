@@ -1,0 +1,37 @@
+#include <iostream>
+#include <string>
+//std::getline() - используется для чтения названий с пробелами
+int main() {
+    std::string city1, city2, city3;
+    std::string the_longest, the_shortest;
+    
+    std::cout << "Введите название первого города: ";
+    std::getline(std::cin, city1);
+    std::cout << "Введите название второго города: ";
+    std::getline(std::cin, city2);
+    std::cout << "Введите название третьего города: ";
+    std::getline(std::cin, city3);
+    
+    // Находим самое длинное название
+    the_longest = city1;
+    if (city2.length() > the_longest.length()) {
+        the_longest = city2;
+    }
+    if (city3.length() > the_longest.length()) {
+        the_longest = city3;
+    }
+    
+    // Находим самое короткое название
+    the_shortest = city1;
+    if (city2.length() < the_shortest.length()) {
+        the_shortest = city2;
+    }
+    if (city3.length() < the_shortest.length()) {
+        the_shortest = city3;
+    }
+    
+    std::cout << "Самое длинное название: " << the_longest << std::endl;
+    std::cout << "Самое короткое название: " << the_shortest << std::endl;
+    
+    return 0;
+}
