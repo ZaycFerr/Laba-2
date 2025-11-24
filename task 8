@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string word;
+    int m, n;
+
+    std::cout << "Введите слово: ";
+    std::cin >> word;
+    std::cout << "Введите m (начальный индекс): ";
+    std::cin >> m;
+    std::cout << "Введите n (конечный индекс): ";
+    std::cin >> n;
+
+    // Проверка корректности введенных индексов
+    if (m < 1 || n > word.length() || m > n) {
+        std::cout << "Ошибка: некорректные индексы!" << std::endl;
+        return 1;
+    }
+
+    // Получаем подстроку (индексы в C++ начинаются с 0)
+    std::string result = word.substr(m - 1, n - m + 1);
+
+    std::cout << "Результат: " << result << std::endl;
+
+    return 0;
+}
