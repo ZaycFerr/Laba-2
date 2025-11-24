@@ -1,0 +1,18 @@
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string word;
+
+    std::cout << "Введите слово: ";
+    std::cin >> word;
+
+    int length = word.length();
+    std::string stars(length, '*');
+
+    std::string result = stars + word + stars;
+
+    std::cout << "Результат: " << result << std::endl;
+
+    return 0;
+}
