@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include <regex>
+// для работы с регулярными выражениями
+
+int main() {
+    // Шаг 1: Создаем исходную строку
+    std::string sentence = "Can you can a can as a canner can can a can?";
+
+    // Шаг 2: Создаем слово для замены
+    std::string new_word = "Слово в студию";
+
+    // Шаг 3: Выводим исходное предложение
+    std::cout << "Исходное предложение: " << sentence << std::endl;
+
+    // Шаг 4: Создаем регулярное выражение для поиска
+    std::regex pattern("\\bcan\\b", std::regex_constants::icase);
+
+    // Шаг 5: Заменяем все вхождения
+    std::string result = std::regex_replace(sentence, pattern, new_word);
+
+    // Шаг 6: Выводим результат
+    std::cout << "Результат: " << result << std::endl;
+
+    return 0;
+}
