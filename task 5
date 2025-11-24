@@ -1,0 +1,12 @@
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string city;
+    std::cout << "Введите город: ";
+    std::cin >> city;
+
+    std::cout << (city.length() % 2 == 0 ? "Четно" : "Нечетно") << std::endl;
+
+    return 0;
+}
